@@ -1,0 +1,22 @@
+{
+  "name": "portfolio2",
+  "version": "2",
+  "description": "progrmer portfilo",
+  "main": "index.js",
+  "author": "afret",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "next": "^9.5.3",
+    "pdfjs-dist": "^2.4.456",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.3.0",
+    "react-dom": "^16.13.1",
+    "react-icons": "^3.11.0",
+    "react-particles-js": "^3.3.0",
+    "react-pdf": "^5.0.0"
+  }
+}

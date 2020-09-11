@@ -1,0 +1,253 @@
+import {
+  Navbar,
+  Nav,
+  Form,
+  Card,
+  ProgressBar,
+  ThemeProvider,
+  Badge,
+  Row,
+  Col,
+  Modal,
+} from "react-bootstrap";
+import Particles from "react-particles-js";
+import { SiLinkedin } from "react-icons/si";
+import { BsList } from "react-icons/bs";
+import Link from "next/link";
+const set = {
+  particles: {
+    number: {
+      value: 80,
+      density: {
+        enable: true,
+        value_area: 800,
+      },
+    },
+    color: {
+      value: "#ffffff",
+    },
+    shape: {
+      type: "circle",
+      stroke: {
+        width: 0,
+        color: "#000000",
+      },
+      polygon: {
+        nb_sides: 5,
+      },
+      image: {
+        src: "img/github.svg",
+        width: 100,
+        height: 100,
+      },
+    },
+    opacity: {
+      value: 0.5,
+      random: false,
+      anim: {
+        enable: false,
+        speed: 1,
+        opacity_min: 0.1,
+        sync: false,
+      },
+    },
+    size: {
+      value: 3,
+      random: true,
+      anim: {
+        enable: false,
+        speed: 40,
+        size_min: 0.1,
+        sync: false,
+      },
+    },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#ffffff",
+      opacity: 0.4,
+      width: 1,
+    },
+    move: {
+      enable: true,
+      speed: 6,
+      direction: "none",
+      random: false,
+      straight: false,
+      out_mode: "out",
+      bounce: false,
+      attract: {
+        enable: false,
+        rotateX: 600,
+        rotateY: 1200,
+      },
+    },
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: {
+        enable: true,
+        mode: "repulse",
+      },
+      onclick: {
+        enable: true,
+        mode: "push",
+      },
+      resize: true,
+    },
+    modes: {
+      grab: {
+        distance: 400,
+        line_linked: {
+          opacity: 1,
+        },
+      },
+      bubble: {
+        distance: 400,
+        size: 40,
+        duration: 2,
+        opacity: 8,
+        speed: 3,
+      },
+      repulse: {
+        distance: 200,
+        duration: 0.4,
+      },
+      push: {
+        particles_nb: 4,
+      },
+      remove: {
+        particles_nb: 2,
+      },
+    },
+  },
+  retina_detect: true,
+};
+const Dialog = ({ showDialog, setShowDialog }) => (
+  <Modal
+    show={showDialog}
+    onHide={() => setShowDialog(false)}
+    dialogClassName="modal-100w"
+    aria-labelledby="example-custom-modal-styling-title"
+    style={{marginTop:"150px"}}
+  >
+    <Modal.Body style={{}}>
+      <h3>
+        <Link href="/">Home</Link>
+      </h3>
+      <h3>
+        <Link href="/contactme">Contact</Link>
+      </h3>
+      <h3>
+        <Link href="/resume">CV</Link>
+      </h3>
+    </Modal.Body>
+  </Modal>
+);
+
+const NavBar = ({ setShowDialog }) => (
+  <>
+    <ThemeProvider prefixes={{ background: "#00000" }}>
+      <Navbar bg="dark" variant="dark">
+        <Navbar.Brand href="#home">Afret</Navbar.Brand>
+        <Nav className="mr-auto"></Nav>
+        <Form inline>
+          <div style={{ color: "white" }}>
+            <BsList size={25} onClick={() => setShowDialog(true)}></BsList>
+          </div>
+        </Form>
+      </Navbar>
+    </ThemeProvider>
+  </>
+);
+const Footer = () => (
+  <div style={{ width: "100vw", flexGrow: 1,background:"#ffffff"  }}>
+    <Row className="justify-content-md-center" style={{ maxWidth: "100%",}}>
+      <Col xs lg="3" style={{ color: "#a4a4a4", }}>
+        <h1 style={{ color: "white" ,display:"flex",justifyContent:"center"}}>Contact me at</h1>
+        <div style={{ color: "blue",display:"flex",justifyContent:"center"}}>
+          <SiLinkedin size={45} />
+        </div>
+      </Col>
+    </Row>
+  </div>
+);
+
+const Layout = ({ children }) => {
+  const [vs, setVs] = React.useState(0);
+  const [showDialog, setShowDialog] = React.useState(false);
+  React.useEffect(() => {
+    window.addEventListener("scroll", () => {
+      let body = document.body,
+        html = document.documentElement;
+
+      let dheight = Math.max(
+        body.scrollHeight,
+        body.offsetHeight,
+        html.clientHeight,
+        html.scrollHeight,
+        html.offsetHeight
+      );
+      let wheight = window.innerHeight;
+      let v = window.scrollY;
+      setVs((v / (dheight - wheight)) * 100);
+    });
+  }, []);
+
+  return (
+    <div className="layout">
+      <div className="KW_progressContainer">
+        <ProgressBar
+          className="KW_progressBar"
+          now={vs}
+          style={{ background: "inherit" }}
+        />
+      </div>
+      <NavBar setShowDialog={setShowDialog} />
+      <Dialog showDialog={showDialog} setShowDialog={setShowDialog}></Dialog>
+
+      <Particles
+        params={set}
+        className="particles"
+        style={{
+          background: "#000000",
+          width: "100%",
+
+          position: "fixed",
+          height: "100%",
+        }}
+      ></Particles>
+      {children}
+
+      <Footer />
+
+      <style jsx>
+        {`
+          .layout {
+            background-color: black;
+          }
+          .KW_progressContainer {
+            left: 0;
+            width: 100%;
+
+            position: fixed;
+            top: 0px;
+            overflow: hidden;
+
+            display: table;
+            table-layout: fixed;
+            z-index: 999;
+          }
+
+          .particles {
+          }
+        `}
+      </style>
+    </div>
+  );
+};
+const theme = {
+  backgroundImage: "/static/img/bgimg.jpeg",
+};
+export default Layout;
