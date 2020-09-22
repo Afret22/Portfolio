@@ -140,7 +140,7 @@ const Dialog = ({ showDialog, setShowDialog }) => (
         <Link href="/contactme">Contact</Link>
       </h3>
       <h3>
-        <Link href="/resume">CV</Link>
+        <Link href="/static/PDF/Abdelkader-rafaat.pdf">CV</Link>
       </h3>
     </Modal.Body>
   </Modal>

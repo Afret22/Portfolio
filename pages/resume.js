@@ -40,14 +40,17 @@ const Resume = () => {
   }
   return (
     <Layout>
-      <Row className="justify-content-md-center">
-        <Card style={{background:"inherit",maxWidth: "%"}}>
+     
+        <div className="justify-content-md-center">
+            
         <Document
-            style={{maxWidth:"50%",maxHeight: "50%"}}
+            
             file="/static/PDF/Abdelkader-rafaat.pdf"
             onLoadSuccess={onDocumentLoadSuccess}
           >
-            <Page pageNumber={pageNumber} />
+              <div style={{maxWidth:"80%"}}>
+            <Page pageNumber={pageNumber} width="450" />
+            </div>
           </Document>
           <div>
         <button
@@ -70,8 +73,13 @@ const Resume = () => {
             Page {pageNumber} of {numPages}
           </p>
           
-        </Card>
-      </Row>
+        </div>
+  <style jsx>{`
+    .react-pdf__Page__canvas {
+        min-height: 100vh ! important;
+        max-width: 80vw! important;
+      }
+  `}</style>
       
     </Layout>
   );
