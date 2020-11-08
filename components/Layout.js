@@ -9,11 +9,13 @@ import {
   Row,
   Col,
   Modal,
+  Button,
 } from "react-bootstrap";
 import Particles from "react-particles-js";
 import { SiLinkedin } from "react-icons/si";
 import { BsList } from "react-icons/bs";
 import Link from "next/link";
+
 const set = {
   particles: {
     number: {
@@ -128,10 +130,14 @@ const Dialog = ({ showDialog, setShowDialog }) => (
   <Modal
     show={showDialog}
     onHide={() => setShowDialog(false)}
-    dialogClassName="modal-100w"
-    aria-labelledby="example-custom-modal-styling-title"
-    style={{marginTop:"150px"}}
+    animation={true}
+    aria-labelledby="contained-modal-title-vcenter"
+    centered
+    contentClassName="modal-co"
+    size="lg"
+    style={{background:"transparent"}}
   >
+        
     <Modal.Body style={{}}>
       <h3>
         <Link href="/">Home</Link>
@@ -142,19 +148,24 @@ const Dialog = ({ showDialog, setShowDialog }) => (
       <h3>
         <Link href="/static/PDF/Abdelkader-rafaat.pdf">CV</Link>
       </h3>
+      <h3>
+        <Link href="/fun">Side Projects</Link>
+      </h3>
     </Modal.Body>
   </Modal>
 );
-
 const NavBar = ({ setShowDialog }) => (
   <>
     <ThemeProvider prefixes={{ background: "#00000" }}>
       <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="#home">Afret</Navbar.Brand>
+        <Navbar.Brand href="#home">A.R</Navbar.Brand>
         <Nav className="mr-auto"></Nav>
         <Form inline>
           <div style={{ color: "white" }}>
+            
+
             <BsList size={25} onClick={() => setShowDialog(true)}></BsList>
+            
           </div>
         </Form>
       </Navbar>
@@ -162,12 +173,15 @@ const NavBar = ({ setShowDialog }) => (
   </>
 );
 const Footer = () => (
-  <div style={{ width: "100vw", flexGrow: 1,background:"#ffffff"  }}>
+  <div className="footer" style={{ width: "100vw",background:"#00000000", position: "relative" ,bottom:0,}}>
     <Row className="justify-content-md-center" style={{ maxWidth: "100%",}}>
-      <Col xs lg="3" style={{ color: "#a4a4a4", }}>
+      <Col xs lg="3" style={{ color: "#a4a4a4",postion:"absolute", bottom:0, }}>
         <h1 style={{ color: "white" ,display:"flex",justifyContent:"center"}}>Contact me at</h1>
         <div style={{ color: "blue",display:"flex",justifyContent:"center"}}>
-          <SiLinkedin size={45} />
+            <Button href="https://www.linkedin.com/in/abdelkader-rafaat-141a68199/">
+          <SiLinkedin size={45}   />
+
+            </Button>
         </div>
       </Col>
     </Row>
@@ -177,6 +191,7 @@ const Footer = () => (
 const Layout = ({ children }) => {
   const [vs, setVs] = React.useState(0);
   const [showDialog, setShowDialog] = React.useState(false);
+  
   React.useEffect(() => {
     window.addEventListener("scroll", () => {
       let body = document.body,
@@ -242,6 +257,11 @@ const Layout = ({ children }) => {
 
           .particles {
           }
+
+          .modal-co {
+            background-color: black;
+            background: inherit;
+        }
         `}
       </style>
     </div>

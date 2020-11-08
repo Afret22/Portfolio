@@ -11,6 +11,32 @@ const Index = ()=>{
     <Card>1212</Card><Card>1212</Card>
     <Card>1212</Card>
     <Card>1212</Card>
+    <Card>1212</Card>
+    <Card>1212</Card>
+    <Card>1212</Card>
+    <Card>1212</Card><Card>1212</Card>
+    <Card>1212</Card>
+    <Card>1212</Card><Card>1212</Card>
+    <Card>1212</Card>
+    <Card>1212</Card>
+    <Card>1212</Card><Card>1212</Card>
+    <Card>1212</Card>
+    <Card>1212</Card><Card>1212</Card>
+    <Card>1212</Card>
+    <Card>1212</Card>
+    <Card>1212</Card><Card>1212</Card>
+    <Card>1212</Card>
+    <Card>1212</Card><Card>1212</Card>
+    <Card>1212</Card>
+    <Card>1212</Card>
+    <Card>1212</Card><Card>1212</Card>
+    <Card>1212</Card>
+    <Card>1212</Card><Card>1212</Card>
+    <Card>1212</Card>
+    <Card>1212</Card>
+    <Card>1212</Card><Card>1212</Card>
+    <Card>1212</Card>
+    <Card>1212</Card>   
     
     
     <div style={{position:"",color:"white"}}> hello</div>
