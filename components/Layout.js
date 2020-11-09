@@ -167,8 +167,11 @@ const NavBar = ({ setShowDialog }) => (
         <Form inline>
           <div style={{ color: "white" }}>
             
-
-            <BsList size={25} onClick={() => setShowDialog(true)}></BsList>
+            <a  href="#" style={{ textDecoration: 'none',color:"#fff" }}> 
+            <motion.div whileHover={{scale:1.2}} >
+            <BsList size={30} whileHover={{scale:"1.1"}} onClick={() => setShowDialog(true)}></BsList>
+            </motion.div>
+            </a>
             
           </div>
         </Form>
