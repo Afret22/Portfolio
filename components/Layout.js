@@ -15,6 +15,7 @@ import Particles from "react-particles-js";
 import { SiLinkedin } from "react-icons/si";
 import { BsList } from "react-icons/bs";
 import Link from "next/link";
+import { motion } from "framer-motion"
 
 const set = {
   particles: {
@@ -138,19 +139,22 @@ const Dialog = ({ showDialog, setShowDialog }) => (
     style={{background:"transparent"}}
   >
         
-    <Modal.Body style={{}}>
-      <h3>
+    <Modal.Body style={{}} >
+      <motion.h3 whileHover={{scale:1.03}} >
         <Link href="/">Home</Link>
-      </h3>
-      <h3>
+      </motion.h3>
+      <motion.h3 whileHover={{scale:1.03}} >
         <Link href="/contactme">Contact</Link>
-      </h3>
-      <h3>
+        </motion.h3>
+      <motion.h3 whileHover={{scale:1.03}} >
         <Link href="/static/PDF/Abdelkader-rafaat.pdf">CV</Link>
-      </h3>
-      <h3>
+        </motion.h3>
+      <motion.h3 whileHover={{scale:1.03}} >
         <Link href="/fun">Side Projects</Link>
-      </h3>
+        </motion.h3>
+      <motion.h3 whileHover={{scale:1.03}} >
+        <Link href="/projects">Deployed Projects</Link>
+        </motion.h3>
     </Modal.Body>
   </Modal>
 );
@@ -158,7 +162,7 @@ const NavBar = ({ setShowDialog }) => (
   <>
     <ThemeProvider prefixes={{ background: "#00000" }}>
       <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="#home">A.R</Navbar.Brand>
+        <Navbar.Brand href="/"><img src="/static/img/Logo.png" alt="" style={{width:"60%",color:"white"}}/></Navbar.Brand>
         <Nav className="mr-auto"></Nav>
         <Form inline>
           <div style={{ color: "white" }}>
