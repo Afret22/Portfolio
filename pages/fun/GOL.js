@@ -2,11 +2,16 @@ import Layout from "../../components/Layout";
 import GameOfLife from "../../components/GameOfLife";
 import useComponentWillMount from "../../components/useComponentWillMount";
 import { Card, Col, Container, Row } from "react-bootstrap";
+import {NextSeo} from "next-seo"
 
 
 
 const GOL = ()=>{
     const [smallWindow, setSmallWindow] = React.useState(false);
+    const SEO ={
+        title:"GameOfLife",
+        description:"The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Conway It is a zero-player game,meaning that its evolution is determined by its initial state, requiring no further input."
+}
     
    React.useEffect(() => {
         log()
@@ -15,8 +20,6 @@ const GOL = ()=>{
     
         const log = () => 
         {
-            // console.log("hol1a1",window.innerWidth )
-
             if (window.innerWidth <= 1050) {
               setSmallWindow(true);
             }
@@ -33,6 +36,8 @@ const GOL = ()=>{
 
 return(
     <Layout>
+    <NextSeo {...SEO}/>
+
     <div style={{ margin:"auto", margin:""}}>
     { smallWindow   ? 
     <Card style={{ justifyContent:"center", display: "flex",marginTop:"100px",background:"inherit"}}>

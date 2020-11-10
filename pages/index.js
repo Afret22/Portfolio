@@ -1,10 +1,16 @@
 import Layout from "../components/Layout";
 import { Card } from "react-bootstrap";
 import Typical from 'react-typical'
+import {NextSeo} from "next-seo"
 
 const Index = ()=>{
+    const SEO ={
+        title:"A.R Software Engineer",
+        description:"Contact me at 01223699925 "
+}
     return (
         <Layout>
+            <NextSeo {...SEO}/>
 
     <Card style={{display:"table",padding:"30px",background:"#8080802e",color: "white",marginTop: "21%"}}>
     <Typical

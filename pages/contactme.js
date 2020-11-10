@@ -2,13 +2,11 @@ import Layout from "../components/Layout";
 import { Card, Button, Jumbotron, Container, Col, Row, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Firebase from "../components/firebase";
-// import { useRouter } from 'next/router'
+import {NextSeo} from "next-seo"
 
 
 const onSubmit = data => {
-    // const router = useRouter()
     Firebase.createMsg(data).then(()=>{
-        // router().push('/')
         window.location.reload()
     })
     
@@ -16,10 +14,16 @@ const onSubmit = data => {
 
 const ContactMe = ()=>{
     const { register, handleSubmit,} = useForm();
+    const SEO ={
+            title:"Contact Me",
+            description:"Contact me at 01223699925 "
+    }
     
 return (
-
+    <>
     <Layout>
+    <NextSeo {...SEO}/>
+
     <div>
             <div  style={{marginTop:'100px' ,marginBottom:"40px"}}>
             <Container>
@@ -71,6 +75,7 @@ return (
        
             </div>
     </Layout>
+    </>
 )
 }
 

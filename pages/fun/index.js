@@ -2,10 +2,16 @@
 import { Button, Card, CardDeck } from "react-bootstrap";
 import Layout from "../../components/Layout";
 import { motion } from "framer-motion"
+import {NextSeo} from "next-seo"
 
 const Index = ()=>{
+    const SEO ={
+        title:"Side apps",
+        description:"Contact me at 01223699925 "
+}
     return (
         <Layout>
+        <NextSeo {...SEO}/>
     <motion.div style={{marginTop:"10%",display: "flex",justifyContent: "center"}} initial={{x:"-100vw"}} animate={{x:0}} whileHover={{scale:1.1}} >
  
   <Card className="card1">

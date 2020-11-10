@@ -141,7 +141,7 @@ const Dialog = ({ showDialog, setShowDialog }) => (
         
     <Modal.Body style={{}} >
       <motion.h3 whileHover={{scale:1.03}} >
-        <Link href="/">Home</Link>
+        <Link href="/" style={{textDecoration:"none"}}>Home</Link>
       </motion.h3>
       <motion.h3 whileHover={{scale:1.03}} >
         <Link href="/contactme">Contact</Link>
@@ -180,7 +180,7 @@ const NavBar = ({ setShowDialog }) => (
   </>
 );
 const Footer = () => (
-  <div className="footer" style={{ width: "100vw",background:"#00000000", position: "relative" ,bottom:0,}}>
+  <div className="footer" style={{ width: "100vw",background:"#00000000", position: "relative" ,bottom:0}}>
     <Row className="justify-content-md-center" style={{ maxWidth: "100%",}}>
       <Col xs lg="3" style={{ color: "#a4a4a4",postion:"absolute", bottom:0, }}>
         <h1 style={{ color: "white" ,display:"flex",justifyContent:"center"}}>Contact me at</h1>
@@ -239,7 +239,7 @@ const Layout = ({ children }) => {
           height: "100%",
         }}
       ></Particles>
-      <div className='wrapper' style={{ minHeight: `calc(100vh - 64px)`,}}>
+      <div className='wrapper' style={{ minHeight: `calc(100vh - 96px)`,}}>
       {children}
       </div>
 
