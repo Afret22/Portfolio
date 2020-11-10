@@ -162,7 +162,7 @@ const NavBar = ({ setShowDialog }) => (
   <>
     <ThemeProvider prefixes={{ background: "#00000" }}>
       <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="/"><img src="/static/img/Logo.png" alt="" style={{width:"60%",color:"white"}}/></Navbar.Brand>
+        <Navbar.Brand href="/"><img src="/static/img/Logo.png" alt="" style={{width:"35%",color:"white"}}/></Navbar.Brand>
         <Nav className="mr-auto"></Nav>
         <Form inline>
           <div style={{ color: "white" }}>
@@ -185,10 +185,9 @@ const Footer = () => (
       <Col xs lg="3" style={{ color: "#a4a4a4",postion:"absolute", bottom:0, }}>
         <h1 style={{ color: "white" ,display:"flex",justifyContent:"center"}}>Contact me at</h1>
         <div style={{ color: "blue",display:"flex",justifyContent:"center"}}>
-            <Button href="https://www.linkedin.com/in/abdelkader-rafaat-141a68199/">
+        <a  href="https://www.linkedin.com/in/abdelkader-rafaat-141a68199/" style={{ textDecoration: 'none',color:"#0000ff" }}> 
           <SiLinkedin size={45}   />
-
-            </Button>
+            </a>
         </div>
       </Col>
     </Row>
@@ -240,7 +239,9 @@ const Layout = ({ children }) => {
           height: "100%",
         }}
       ></Particles>
+      <div className='wrapper' style={{ minHeight: `calc(100vh - 64px)`,}}>
       {children}
+      </div>
 
       <Footer />
 

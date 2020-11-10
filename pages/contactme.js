@@ -1,12 +1,16 @@
 import Layout from "../components/Layout";
 import { Card, Button, Jumbotron, Container, Col, Row, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-
-
+import Firebase from "../components/firebase";
+// import { useRouter } from 'next/router'
 
 
 const onSubmit = data => {
-    console.log(data);
+    // const router = useRouter()
+    Firebase.createMsg(data).then(()=>{
+        // router().push('/')
+        window.location.reload()
+    })
     
   }; 
 
@@ -17,7 +21,6 @@ return (
 
     <Layout>
     <div>
-        {/* <Jumbotron fluid style={{width: "65%",backgroundColor:"inherit",marginTop:90,marginRight:50}}>  className={smallWindow ? "headersml" : "headerlg"}*/}
             <div  style={{marginTop:'100px' ,marginBottom:"40px"}}>
             <Container>
                 <Card style={{backgroundColor: "inherit"}}>
@@ -44,7 +47,6 @@ return (
             </Row>
             </Container>
             </div>
-            {/* </Jumbotron>  */}
             <br/>
             <Card style={{backgroundColor: "inherit"} }>
               <Form onSubmit={handleSubmit(onSubmit)} style={ { margin:"0 auto",width:"50%",justifyContent: "center" , marginBottom:"1"}}>

@@ -10,7 +10,7 @@ const Index = ()=>{
     
     <motion.div style={{marginTop:"10%",display: "flex",justifyContent: "center"}} initial={{y:"-100vw"}} animate={{y:0}} whileHover={{scale:1.1}} >
     <Card className="card1">
-    <Card.Img variant="top" src="/static/img/JustOrder.jpg" style={{Width:"45%"}} />
+    <Card.Img variant="top" src="/static/img/JustOrder.jpg" style={{Width:"25%"}} />
     <Card.Body>
       <Card.Title>ShopShipWear</Card.Title>
       <Card.Text>

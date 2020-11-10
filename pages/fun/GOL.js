@@ -34,7 +34,7 @@ const GOL = ()=>{
 return(
     <Layout>
     <div style={{ margin:"auto", margin:""}}>
-    { true   ? 
+    { smallWindow   ? 
     <Card style={{ justifyContent:"center", display: "flex",marginTop:"100px",background:"inherit"}}>
     
     <Container>
