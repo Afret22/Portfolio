@@ -123,6 +123,7 @@ const GameOfLife = ()=>
             {grid.map((rows,i)=>
                 rows.map((col,k)=>
                      (
+                         <a href='#'style={{textDecoration: 'none'}} >
                     <div
                     onClick={()=>{
                         const newGrid = produce(grid,gridCopy => {
@@ -138,6 +139,7 @@ const GameOfLife = ()=>
                         border:"solid 1px black "
                     }}
                     />
+                    </a>
                         
                     
                     ))

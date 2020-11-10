@@ -17,7 +17,6 @@ const Index = ()=>{
 
     
     
-    <div style={{position:"",color:"white"}}> hello</div>
 
    
     
