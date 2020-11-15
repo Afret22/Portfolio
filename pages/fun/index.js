@@ -13,7 +13,12 @@ const Index = () => {
     <Layout>
       <NextSeo {...SEO} />
       <motion.div
-        style={{ marginTop: "10%", display: "flex", justifyContent: "center" }}
+        style={{
+          marginTop: "10%",
+          marginLeft: "auto",
+          marginRight: "auto",
+          maxWidth: "60vw",
+        }}
         initial={{ x: "-100vw" }}
         animate={{ x: 0 }}
         whileHover={{ scale: 1.1 }}
@@ -37,8 +42,10 @@ const Index = () => {
                 <h3>Discrption</h3>
               </a>
             </Card.Text>
-            <Button variant='primary' >
-                <Link href="/fun/GOL"><h4>View</h4></Link>
+            <Button variant='primary'>
+              <Link href='/fun/GOL'>
+                <h4>View</h4>
+              </Link>
             </Button>
           </Card.Body>
           <Card.Footer>
