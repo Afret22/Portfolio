@@ -41,7 +41,7 @@ const Resume = () => {
   return (
     <Layout>
      
-        <div className="justify-content-md-center">
+        <div style={{width:450,height:300}}>
             
         <Document
             

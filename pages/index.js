@@ -14,41 +14,26 @@ const Index = () => {
     <Layout>
       <NextSeo {...SEO} />
 
-      <motion.div
-        
-        initial={{y:"-100vw"}} 
-        animate={{y:0}}
-         whileHover={{scale:1.1}}
+      <Toast
+        show={toast}
+        onClose={() => setToast(false)}
         style={{
           position: "relative",
-          minHeight: "100px",
+          right: "49%",
         }}
       >
-        <Toast
-          show={toast}
-          onClose={() => setToast(false)}
-          style={{
-            position: "absolute",
-            top: 0,
-            right: "49%",
-          }}
-        >
-          <Toast.Header>
-            <h4 className="mr-auto">Still Under Devoplment</h4>
-          </Toast.Header>
-          <Toast.Body>
-            {" "}
-            <h6>Don`t Judge ;~)</h6>
-          </Toast.Body>
-        </Toast>
-      </motion.div>
+        <Toast.Header>
+          <h4 className='mr-auto'>Still Under Devoplment</h4>
+        </Toast.Header>
+        <Toast.Body> </Toast.Body>
+      </Toast>
       <Card
         style={{
           display: "table",
           padding: "30px",
           background: "#8080802e",
           color: "white",
-          marginTop: "21%",
+          marginTop: "10%",
         }}
       >
         <Typical
@@ -68,7 +53,7 @@ const Index = () => {
             " >And i am alwyas open to change and learn",
           ]}
           loop={Infinity}
-          wrapper="h1"
+          wrapper='h1'
         />
       </Card>
     </Layout>
