@@ -164,9 +164,9 @@ const Dialog = ({ showDialog, setShowDialog }) => (
 const NavBar = ({ setShowDialog }) => (
   <>
     <ThemeProvider>
-      <Navbar bg='dark' variant='dark' style={{width:"101%"}}>
+      <Navbar bg='dark' variant='dark'>
         <Navbar.Brand>
-          <SVGIMG/>
+          <SVGIMG />
         </Navbar.Brand>
         <Nav className='mr-auto'></Nav>
         <Form inline>

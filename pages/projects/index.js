@@ -18,7 +18,7 @@ const Index = () => {
           marginTop: "10%",
           marginLeft: "auto",
           marginRight: "auto",
-          maxWidth: "45vw",
+          maxWidth: "50vw",
         }}
         initial={{ y: "-100vw" }}
         animate={{ y: 0 }}
@@ -39,7 +39,7 @@ const Index = () => {
                 <br />
                 Made with React/Firebase
               </h5>
-              <a href='https://shopshipwear.com/' target='_blank'>
+              <a href='https://shopshipwear.com/'>
                 <h3>Visit</h3>
               </a>
             </Card.Text>
