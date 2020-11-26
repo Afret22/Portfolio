@@ -27,7 +27,6 @@ const Index = () => {
           <Card.Img
             variant='top'
             src='/static/img/JustOrder.jpg'
-            style={{ Width: "25%" }}
           />
           <Card.Body>
             <Card.Title>ShopShipWear</Card.Title>
