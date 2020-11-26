@@ -12,7 +12,6 @@ const Index = () => {
   return (
     <Layout>
       <NextSeo {...SEO} />
-        <Container>
       <motion.div
         style={{
           marginTop: "10%",
@@ -49,7 +48,6 @@ const Index = () => {
           </Card.Footer>
         </Card>
       </motion.div>
-      </Container>
     </Layout>
   );
 };

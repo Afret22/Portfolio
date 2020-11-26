@@ -12,13 +12,12 @@ const Index = () => {
   return (
     <Layout>
       <NextSeo {...SEO} />
-      <Container>
         <motion.div
           style={{
             marginTop: "10%",
             marginLeft: "auto",
             marginRight: "auto",
-            maxWidth: "35vw",
+            maxWidth: "50vw",
           }}
           initial={{ x: "-100vw" }}
           animate={{ x: 0 }}
@@ -60,7 +59,7 @@ const Index = () => {
             marginTop: "10%",
             marginLeft: "auto",
             marginRight: "auto",
-            maxWidth: "35vw",
+            maxWidth: "50vw",
           }}
           initial={{ x: "100vw" }}
           animate={{ x: 0 }}
@@ -104,7 +103,6 @@ const Index = () => {
             </Card.Footer>
           </Card>
         </motion.div>
-      </Container>
     </Layout>
   );
 };
