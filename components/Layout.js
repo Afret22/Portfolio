@@ -17,6 +17,7 @@ import { SiLinkedin, SiGithub } from "react-icons/si";
 import { BsList } from "react-icons/bs";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import SVGIMG from "./SVGIMG";
 
 const set = {
   particles: {
@@ -162,16 +163,10 @@ const Dialog = ({ showDialog, setShowDialog }) => (
 );
 const NavBar = ({ setShowDialog }) => (
   <>
-    <ThemeProvider >
-      <Navbar bg='dark' variant='dark'>
+    <ThemeProvider>
+      <Navbar bg='dark' variant='dark' style={{width:"101%"}}>
         <Navbar.Brand>
-          <Link href="/">
-            <img
-              src='/static/img/Logo.png'
-              alt='A.R'
-              style={{ width: "35%", color: "white" }}
-            />
-          </Link>
+          <SVGIMG/>
         </Navbar.Brand>
         <Nav className='mr-auto'></Nav>
         <Form inline>

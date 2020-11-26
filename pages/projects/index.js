@@ -1,4 +1,4 @@
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, Container } from "react-bootstrap";
 import Layout from "../../components/Layout";
 import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
@@ -6,19 +6,19 @@ import { NextSeo } from "next-seo";
 const Index = () => {
   const SEO = {
     title: "Deployed apps",
-    description: "Contact me at 01223699925 ",
+    description: "Deployed apps",
   };
 
   return (
     <Layout>
       <NextSeo {...SEO} />
-
+        <Container>
       <motion.div
         style={{
           marginTop: "10%",
           marginLeft: "auto",
           marginRight: "auto",
-          maxWidth: "60vw",
+          maxWidth: "45vw",
         }}
         initial={{ y: "-100vw" }}
         animate={{ y: 0 }}
@@ -39,7 +39,7 @@ const Index = () => {
                 <br />
                 Made with React/Firebase
               </h5>
-              <a href='https://shopshipwear.com/'>
+              <a href='https://shopshipwear.com/' target='_blank'>
                 <h3>Visit</h3>
               </a>
             </Card.Text>
@@ -49,6 +49,7 @@ const Index = () => {
           </Card.Footer>
         </Card>
       </motion.div>
+      </Container>
     </Layout>
   );
 };

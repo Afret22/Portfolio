@@ -2,13 +2,12 @@ import Layout from "../components/Layout";
 import { Card, Toast } from "react-bootstrap";
 import Typical from "react-typical";
 import { NextSeo } from "next-seo";
-import { motion } from "framer-motion";
 
 const Index = () => {
   const [toast, setToast] = React.useState(true);
   const SEO = {
     title: "A.R Software Engineer",
-    description: "Contact me at 01223699925 ",
+    description: "Abdelkader is a software engineer that worked in many fields of software development, A person with the open mind to learn and change. ",
   };
   return (
     <Layout>
@@ -42,7 +41,7 @@ const Index = () => {
             1000,
             ">My name is Abdelkader i am a Software Engineer",
             500,
-            ">I worked with Ai",
+            ">I worked with AI",
             500,
             ">I worked in web-Dev",
             1000,
