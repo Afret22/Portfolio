@@ -1,3 +1,15 @@
 body {
     overflow: overlay;
+    width: 100%;
+    height: 100%;
   }
+
+  canvas{
+    overflow: hidden;
+    position: fixed;
+    height: 100%;
+    
+  }
+  #__next {
+    overflow: hidden;
+}
