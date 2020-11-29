@@ -13,19 +13,7 @@ const Index = () => {
     <Layout>
       <NextSeo {...SEO} />
 
-      {/* <Toast
-        show={toast}
-        onClose={() => setToast(false)}
-        style={{
-          position: "relative",
-          right: "49%",
-        }}
-      >
-        <Toast.Header>
-          <h4 className='mr-auto'>Still Under Devoplment</h4>
-        </Toast.Header>
-        <Toast.Body> </Toast.Body>
-      </Toast> */}
+      
       <Card
         style={{
           display: "table",

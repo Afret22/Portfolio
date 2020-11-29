@@ -40,11 +40,7 @@ const set = {
       polygon: {
         nb_sides: 5,
       },
-      image: {
-        src: "img/github.svg",
-        width: 100,
-        height: 100,
-      },
+     
     },
     opacity: {
       value: 0.5,
@@ -278,8 +274,9 @@ const Layout = ({ children }) => {
           }}
         ></Particles>
       </Container>
+      <NavBar setShowDialog={setShowDialog} />
+
       <div className='wrapper' style={{ minHeight: `calc(95vh - 96px)` }}>
-        <NavBar setShowDialog={setShowDialog} />
 
         {children}
       </div>

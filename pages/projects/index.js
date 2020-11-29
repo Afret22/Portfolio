@@ -8,7 +8,15 @@ const Index = () => {
     title: "Deployed apps",
     description: "Deployed apps",
   };
+  const [flip, setFlip] = React.useState(false);
+  const [body, setBody] = React.useState({});
 
+  React.useEffect(() => {
+    setFlip(!flip);
+    setBody(document.body);
+    body.style = "overflow:hidden";
+    body.style = "overflow:auto";
+  }, []);
   return (
     <Layout>
       <NextSeo {...SEO} />
@@ -29,7 +37,7 @@ const Index = () => {
                   <br />
                   Made with React/Firebase
                 </h5>
-                <a href='https://shopshipwear.com/'>
+                <a target='_blank' href='https://shopshipwear.com/'>
                   <h3>Visit</h3>
                 </a>
               </Card.Text>
@@ -40,7 +48,6 @@ const Index = () => {
           </Card>
         </motion.div>
       </Col>
-      
     </Layout>
   );
 };
