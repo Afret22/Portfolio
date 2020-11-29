@@ -9,6 +9,10 @@ const Index = () => {
     title: "A.R Software Engineer",
     description: "Abdelkader is a software engineer that worked in many fields of software development, A person with the open mind to learn and change. ",
   };
+  React.useEffect(() => {
+      const dis = document.getElementById('__next')
+      dis.ariaHiddenObject = true
+  },[])
   return (
     <Layout>
       <NextSeo {...SEO} />
