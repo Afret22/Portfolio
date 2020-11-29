@@ -13,7 +13,7 @@ const Index = () => {
     <Layout>
       <NextSeo {...SEO} />
 
-      <Toast
+      {/* <Toast
         show={toast}
         onClose={() => setToast(false)}
         style={{
@@ -25,7 +25,7 @@ const Index = () => {
           <h4 className='mr-auto'>Still Under Devoplment</h4>
         </Toast.Header>
         <Toast.Body> </Toast.Body>
-      </Toast>
+      </Toast> */}
       <Card
         style={{
           display: "table",

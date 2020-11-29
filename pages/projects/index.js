@@ -1,4 +1,4 @@
-import { Button, Card, Container } from "react-bootstrap";
+import { Button, Card, Col, Container } from "react-bootstrap";
 import Layout from "../../components/Layout";
 import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
@@ -12,41 +12,35 @@ const Index = () => {
   return (
     <Layout>
       <NextSeo {...SEO} />
-      <motion.div
-        style={{
-          marginTop: "10%",
-          marginLeft: "auto",
-          marginRight: "auto",
-          maxWidth: "50vw",
-        }}
-        initial={{ y: "-100vw" }}
-        animate={{ y: 0 }}
-        whileHover={{ scale: 1.1 }}
-      >
-        <Card className='card1'>
-          <Card.Img
-            variant='top'
-            src='/static/img/JustOrder.jpg'
-          />
-          <Card.Body>
-            <Card.Title>ShopShipWear</Card.Title>
-            <Card.Text>
-              <h5>
-                by Adding links from Instagram/FB page to the site you can buy
-                fashion staff with ease
-                <br />
-                Made with React/Firebase
-              </h5>
-              <a href='https://shopshipwear.com/'>
-                <h3>Visit</h3>
-              </a>
-            </Card.Text>
-          </Card.Body>
-          <Card.Footer>
-            <small className='text-muted'>May 2020</small>
-          </Card.Footer>
-        </Card>
-      </motion.div>
+      <Col md={6} lg={6} xl={6} style={{ margin: "auto" }}>
+        <motion.div
+          initial={{ x: "-100vw" }}
+          animate={{ x: 0 }}
+          whileHover={{ scale: 1.1 }}
+        >
+          <Card className='my-3 p-3 rounded'>
+            <Card.Img variant='top' src='/static/img/JustOrder.jpg' />
+            <Card.Body>
+              <Card.Title>ShopShipWear</Card.Title>
+              <Card.Text>
+                <h5>
+                  by Adding links from Instagram/FB page to the site you can buy
+                  fashion staff with ease
+                  <br />
+                  Made with React/Firebase
+                </h5>
+                <a href='https://shopshipwear.com/'>
+                  <h3>Visit</h3>
+                </a>
+              </Card.Text>
+            </Card.Body>
+            <Card.Footer>
+              <small className='text-muted'>May 2020</small>
+            </Card.Footer>
+          </Card>
+        </motion.div>
+      </Col>
+      
     </Layout>
   );
 };
