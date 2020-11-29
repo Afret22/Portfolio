@@ -3,10 +3,10 @@ import Layout from "../../components/Layout";
 import * as faceapi from "face-api.js";
 
 const FaceApi = () => {
-  const [expression, setExpression] = React.useState('  ');
+  const [expression, setExpression] = React.useState("  ");
 
   function getKeyByValue(object, value) {
-    return Object.keys(object).find(key => object[key] === value);
+    return Object.keys(object).find((key) => object[key] === value);
   }
 
   React.useEffect(async () => {
@@ -42,12 +42,10 @@ const FaceApi = () => {
           displaySize
         );
         canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
-        // faceapi.recognizeFaceExpressions(video).then(res=> console.log(res))
-        // let arr = Object.values(detections[0].expressions);
+        // faceapi.recognizeFaceExpressions(video).then(res=> console.log(res      // let arr = Object.values(detections[0].expressions);
         // let max = Math.max(...arr);
         // setExpression(String(getKeyByValue(detections[0].expressions,max)));
         // console.log(expression);
-
       }, 100);
     });
   }, []);

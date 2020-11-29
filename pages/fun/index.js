@@ -1,4 +1,4 @@
-import { Button, Card, Col} from "react-bootstrap";
+import { Button, Card, Col, Row} from "react-bootstrap";
 import Layout from "../../components/Layout";
 import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
@@ -10,9 +10,11 @@ const Index = () => {
     description: "Contact me at 01223699925 ",
   };
   return (
+      <>
     <Layout>
       <NextSeo {...SEO} />
-      <Col md={6} lg={3} xl={3} style={{ margin: "auto" }}>
+      <>
+      <Col md={6} lg={6} xl={6} style={{ margin: "auto" }}>
         <motion.div
           initial={{ x: "-100vw" }}
           animate={{ x: 0 }}
@@ -50,7 +52,7 @@ const Index = () => {
         </motion.div>
       </Col>
 
-      <Col md={6} lg={3} xl={3} style={{ margin: "auto" }}>
+      <Col md={6} lg={6} xl={6} style={{ margin: "auto" }}>
         <motion.div
           initial={{ x: "100vw" }}
           animate={{ x: 0 }}
@@ -94,7 +96,9 @@ const Index = () => {
           </Card>
         </motion.div>
       </Col>
+      </>
     </Layout>
+    </>
   );
 };
 
