@@ -16,7 +16,7 @@ const GOL = ()=>{
    React.useEffect(() => {
         log()
        
-        },[])
+        },[smallWindow])
     
         const log = () => 
         {

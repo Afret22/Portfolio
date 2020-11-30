@@ -3,13 +3,32 @@ import Layout from "../../components/Layout";
 import * as faceapi from "face-api.js";
 
 const FaceApi = () => {
-  const [expression, setExpression] = React.useState("  ");
+  const [expression, setExpression] = React.useState("");
+  const [gender, setGender] = React.useState("");
+  const [age, setAge] = React.useState(0);
+  const [smallWindow, setSmallWindow] = React.useState(false);
 
   function getKeyByValue(object, value) {
     return Object.keys(object).find((key) => object[key] === value);
   }
 
-  React.useEffect(async () => {
+  React.useEffect( () => {
+    const log = () => 
+    {
+        if (window.innerWidth <= 750) {
+          setSmallWindow(true);
+        }
+        
+        window.addEventListener("resize", () => {
+          if (window.innerWidth <= 750) {
+            setSmallWindow(true);
+          } else {
+            setSmallWindow(false);
+          }
+        });
+    };
+
+    log()
     const startVideo = () => {
       const video = document.getElementById("video");
 
@@ -25,6 +44,7 @@ const FaceApi = () => {
       faceapi.nets.tinyFaceDetector.loadFromUri("/static/Models"),
       ,
       faceapi.nets.faceExpressionNet.loadFromUri("/static/Models"),
+      faceapi.nets.ageGenderNet.loadFromUri("/static/Models"),
     ]).then(startVideo());
 
     video.addEventListener("playing", () => {
@@ -36,19 +56,81 @@ const FaceApi = () => {
       setInterval(async () => {
         const detections = await faceapi
           .detectAllFaces(video, new faceapi.TinyFaceDetectorOptions())
-          .withFaceExpressions();
+          .withFaceExpressions()
+          .withAgeAndGender();
         const resizedDetections = faceapi.resizeResults(
           detections,
           displaySize
         );
-        canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
-        // faceapi.recognizeFaceExpressions(video).then(res=> console.log(res      // let arr = Object.values(detections[0].expressions);
-        // let max = Math.max(...arr);
-        // setExpression(String(getKeyByValue(detections[0].expressions,max)));
-        // console.log(expression);
-      }, 100);
+        faceapi.recognizeFaceExpressions(video).then((res) => {
+          let arr = Object.values(res);
+          let max = Math.max(...arr);
+          setExpression(getKeyByValue(res, max));
+        });
+        faceapi.predictAgeAndGender(video).then((res) => {
+          setAge(res.age.toFixed(0));
+          setGender(res.gender);
+        });
+      }, 150);
     });
-  }, []);
+  }, [smallWindow]);
+
+  const getEmoj = () => {
+    switch (gender) {
+      case "male":
+        switch (expression) {
+          case "happy":
+            return "🙆‍♂️";
+
+          case "neutral":
+            return "👨";
+
+          case "sad":
+            return "🙍‍♂️";
+
+          case "surprised":
+            return "🤷‍♂️";
+
+          case "fearful":
+            return "🙇‍♂️";
+
+          case "disgusted":
+            return "🧟‍♂️";
+
+          case "angry":
+            return "👿";
+          default:
+            return "👨";
+        }
+      case "female":
+        switch (expression) {
+          case "happy":
+            return "🙆‍♀️";
+
+          case "neutral":
+            return "👩";
+
+          case "sad":
+            return "🙎‍♀️";
+
+          case "surprised":
+            return "🤷‍♂️";
+
+          case "fearful":
+            return "🤷‍♀️";
+
+          case "disgusted":
+            return "🧟‍♀️";
+
+          case "angry":
+            return "👿";
+          default:
+            return "👩";
+        }
+      default:
+        return "🧐";
+    }
+  };
 
   return (
     <>
@@ -58,16 +140,31 @@ const FaceApi = () => {
           style={{
             margin: "auto",
             padding: 0,
-            width: "719px",
-            height: "559px",
+            background: "#8080802e",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
           }}
         >
-          <video id='video' width='720' height='560' autoPlay muted></video>
+          <video id='video' width={smallWindow ? '360' : '720'} height={smallWindow ? '240' : '560'} autoPlay muted></video>
         </Card>
-        <Col md={4} lg={4}></Col>
+        
+        <Card
+          style={{
+            margin: "auto",
+            display: "table",
+            padding: "2px",
+            background: "#8080802e",
+            color: "white",
+            marginTop: "2px",
+          }}
+          rounded
+        >
+          
+          <h1> {getEmoj()}</h1>
+          <h1>{expression}</h1>
+        </Card>
+        
       </Layout>
     </>
   );
