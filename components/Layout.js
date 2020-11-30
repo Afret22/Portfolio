@@ -228,7 +228,7 @@ const Footer = () => (
   </div>
 );
 
-const Layout = ({ children }) => {
+const Layout = ({ children, smallWindow = false }) => {
   const [vs, setVs] = React.useState(0);
   const [showDialog, setShowDialog] = React.useState(false);
 
@@ -261,7 +261,8 @@ const Layout = ({ children }) => {
       </div>
       <Dialog showDialog={showDialog} setShowDialog={setShowDialog}></Dialog>
       <Container>
-        <Particles
+        { !smallWindow &&
+            <Particles
           params={set}
           className='particles'
           style={{
@@ -272,7 +273,7 @@ const Layout = ({ children }) => {
             top: 0,
             left: 0,
           }}
-        ></Particles>
+        ></Particles>}
       </Container>
       <NavBar setShowDialog={setShowDialog} />
 

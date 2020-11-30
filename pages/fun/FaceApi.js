@@ -71,7 +71,7 @@ const FaceApi = () => {
           setAge(res.age.toFixed(0));
           setGender(res.gender);
         });
-      }, 150);
+      }, 300);
     });
   }, [smallWindow]);
 
@@ -134,7 +134,7 @@ const FaceApi = () => {
 
   return (
     <>
-      <Layout>
+      <Layout smallWindow={smallWindow}>
         <Card
           rounded
           style={{
