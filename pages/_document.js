@@ -9,7 +9,9 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head >
+        <link rel="shortcut icon" href="/static/img/abdo.ico" />
+        </Head>
         <body>
           <Main />
           <NextScript />
