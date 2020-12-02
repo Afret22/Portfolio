@@ -27,6 +27,7 @@ const Index = () => {
                 />
                 <Card.Body>
                   <Card.Title>The Game of Life</Card.Title>
+                  <hr/>
                   <Card.Text>
                     The Game of Life, also known simply as Life, is a cellular
                     automaton devised by the British mathematician John Conway
@@ -35,11 +36,11 @@ const Index = () => {
                     meaning that its evolution is determined by its initial
                     state, requiring no further input.
                     <br />
-                    <a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life">
-                      <h3>Discrption</h3>
+                    <a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life" >
+                      <h4>Discrption</h4>
                     </a>
                   </Card.Text>
-                  <Button variant='primary'>
+                  <Button variant='dark'>
                     <Link href='/fun/GOL'>
                       <h4>Play</h4>
                     </Link>
@@ -59,9 +60,11 @@ const Index = () => {
                 <Card.Img
                   variant='top'
                   src='http://pngriver.com/wp-content/uploads/2018/04/Download-Shopping-Cart-Logo-Png-Image-74545-For-Designing-Projects.png'
+                  style={{ maxWidth: "400px", maxHeight: "400px", margin: "auto" }}
                 />
                 <Card.Body>
                   <Card.Title>Souq el Gom3a</Card.Title>
+                  <hr/>
                   <Card.Text>
                     eCommerce platform built with the MERN stack & Redux.
                     <br />
@@ -83,6 +86,7 @@ const Index = () => {
                   <a
                     target='_blank'
                     href='https://souq-el-gom3a.herokuapp.com/product/5fbe6c1083d44134ada91a2a'
+                    className='btn btn-lg btn-dark'
                   >
                     <h4>View</h4>
                   </a>
@@ -104,6 +108,7 @@ const Index = () => {
 />
                 <Card.Body>
                   <Card.Title>Face Expression </Card.Title>
+                  <hr/>
                   <Card.Text>
                     a small app using 3 neural net models To guss your Expression
                     <ul>
@@ -111,7 +116,7 @@ const Index = () => {
                       <li>Face Expression</li>
                       <li>Age and Gender</li>
                     </ul>
-                    <Button variant='primary'>
+                    <Button variant='dark'>
                       <Link href='/fun/FaceApi'>
                         <h4>View</h4>
                       </Link>
