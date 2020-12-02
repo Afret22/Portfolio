@@ -101,7 +101,7 @@ const Index = () => {
                   className='btn btn-lg btn-dark'
                   onClick={() => setVideoOpen(true)}
                 >
-                  View
+                  View Demo
                 </Button>
               </Card.Text>
             </Card.Body>
