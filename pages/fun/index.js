@@ -59,7 +59,7 @@ const Index = () => {
               <Card className='my-3 p-3 rounded'>
                 <Card.Img
                   variant='top'
-                  src='http://pngriver.com/wp-content/uploads/2018/04/Download-Shopping-Cart-Logo-Png-Image-74545-For-Designing-Projects.png'
+                  src='/static/img/cartLogo.png'
                   style={{ maxWidth: "400px", maxHeight: "400px", margin: "auto" }}
                 />
                 <Card.Body>
@@ -85,7 +85,7 @@ const Index = () => {
 
                   <a
                     target='_blank'
-                    href='https://souq-el-gom3a.herokuapp.com/product/5fbe6c1083d44134ada91a2a'
+                    href='https://souq-el-gom3a.herokuapp.com'
                     className='btn btn-lg btn-dark'
                   >
                     <h4>View</h4>
