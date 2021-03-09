@@ -7,6 +7,7 @@ import {NextSeo} from "next-seo"
 
 const onSubmit = data => {
     Firebase.createMsg(data).then(()=>{
+      alert("Done?")
         window.location.reload()
     })
     

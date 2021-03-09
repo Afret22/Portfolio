@@ -31,7 +31,7 @@ const Index = () => {
           steps={[
             ">Hello",
             1000,
-            ">My name is Abdelkader i am a Software Engineer",
+            ">My name is Abdelkader I am a Software Engineer",
             500,
             ">I worked with AI",
             500,
