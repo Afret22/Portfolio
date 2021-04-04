@@ -14,43 +14,7 @@ const Index = () => {
       <Layout>
         <NextSeo {...SEO} />
         <>
-          <Col md={6} lg={6} xl={6} style={{ margin: "auto" }}>
-            <motion.div
-              initial={{ x: "-100vw" }}
-              animate={{ x: 0 }}
-              whileHover={{ scale: 1.1 }}
-            >
-              <Card className='my-3 p-3 rounded'>
-                <Card.Img
-                  variant='top'
-                  src='https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/e/e6/Conways_game_of_life_breeder_animation.gif'
-                />
-                <Card.Body>
-                  <Card.Title>The Game of Life</Card.Title>
-                  <hr/>
-                  <Card.Text>
-                    The Game of Life, also known simply as Life, is a cellular
-                    automaton devised by the British mathematician John Conway
-                    It is a zero-player game,
-                    <br />
-                    meaning that its evolution is determined by its initial
-                    state, requiring no further input.
-                    <br />
-                    <a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life" >
-                      <h4 style={{color:"blue"}}>Discrption</h4>
-                    </a>
-                  </Card.Text>
-                  <Button variant='dark'>
-                    <Link href='/fun/GOL'>
-                      <h4>Play</h4>
-                    </Link>
-                  </Button>
-                </Card.Body>
-              </Card>
-            </motion.div>
-          </Col>
-
-          <Col md={6} lg={6} xl={6} style={{ margin: "auto" }}>
+        <Col md={6} lg={6} xl={6} style={{ margin: "auto" }}>
             <motion.div
               initial={{ x: "100vw" }}
               animate={{ x: 0 }}
@@ -94,6 +58,43 @@ const Index = () => {
               </Card>
             </motion.div>
           </Col>
+          <Col md={6} lg={6} xl={6} style={{ margin: "auto" }}>
+            <motion.div
+              initial={{ x: "-100vw" }}
+              animate={{ x: 0 }}
+              whileHover={{ scale: 1.1 }}
+            >
+              <Card className='my-3 p-3 rounded'>
+                <Card.Img
+                  variant='top'
+                  src='https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/e/e6/Conways_game_of_life_breeder_animation.gif'
+                />
+                <Card.Body>
+                  <Card.Title>The Game of Life</Card.Title>
+                  <hr/>
+                  <Card.Text>
+                    The Game of Life, also known simply as Life, is a cellular
+                    automaton devised by the British mathematician John Conway
+                    It is a zero-player game,
+                    <br />
+                    meaning that its evolution is determined by its initial
+                    state, requiring no further input.
+                    <br />
+                    <a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life" >
+                      <h4 style={{color:"blue"}}>Discrption</h4>
+                    </a>
+                  </Card.Text>
+                  <Button variant='dark'>
+                    <Link href='/fun/GOL'>
+                      <h4>Play</h4>
+                    </Link>
+                  </Button>
+                </Card.Body>
+              </Card>
+            </motion.div>
+          </Col>
+
+          
 
           <Col md={6} lg={6} xl={6} style={{ margin: "auto" }}>
             <motion.div
