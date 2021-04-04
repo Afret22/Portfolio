@@ -37,7 +37,7 @@ const Index = () => {
                     state, requiring no further input.
                     <br />
                     <a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life" >
-                      <h4>Discrption</h4>
+                      <h4 style={{color:"blue"}}>Discrption</h4>
                     </a>
                   </Card.Text>
                   <Button variant='dark'>

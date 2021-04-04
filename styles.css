@@ -13,3 +13,7 @@ body {
   #__next {
     overflow: hidden;
 }
+a {
+  color: #fff;
+  text-decoration: none;
+}

@@ -4,7 +4,6 @@ import Typical from "react-typical";
 import { NextSeo } from "next-seo";
 
 const Index = () => {
-  const [toast, setToast] = React.useState(true);
   const SEO = {
     title: "A.R Software Engineer",
     description:

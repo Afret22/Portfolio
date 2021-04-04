@@ -18,113 +18,8 @@ import { BsList } from "react-icons/bs";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import SVGIMG from "./SVGIMG";
+import particalConfig from "./particalConfig"
 
-const set = {
-  particles: {
-    number: {
-      value: 80,
-      density: {
-        enable: true,
-        value_area: 800,
-      },
-    },
-    color: {
-      value: "#ffffff",
-    },
-    shape: {
-      type: "circle",
-      stroke: {
-        width: 0,
-        color: "#000000",
-      },
-      polygon: {
-        nb_sides: 5,
-      },
-     
-    },
-    opacity: {
-      value: 0.5,
-      random: false,
-      anim: {
-        enable: false,
-        speed: 1,
-        opacity_min: 0.1,
-        sync: false,
-      },
-    },
-    size: {
-      value: 3,
-      random: true,
-      anim: {
-        enable: false,
-        speed: 40,
-        size_min: 0.1,
-        sync: false,
-      },
-    },
-    line_linked: {
-      enable: true,
-      distance: 150,
-      color: "#ffffff",
-      opacity: 0.4,
-      width: 1,
-    },
-    move: {
-      enable: true,
-      speed: 6,
-      direction: "none",
-      random: false,
-      straight: false,
-      out_mode: "out",
-      bounce: false,
-      attract: {
-        enable: false,
-        rotateX: 600,
-        rotateY: 1200,
-      },
-    },
-  },
-  interactivity: {
-    detect_on: "canvas",
-    events: {
-      onhover: {
-        enable: true,
-        mode: "repulse",
-      },
-      onclick: {
-        enable: true,
-        mode: "push",
-      },
-      resize: true,
-    },
-    modes: {
-      grab: {
-        distance: 400,
-        line_linked: {
-          opacity: 1,
-        },
-      },
-      bubble: {
-        distance: 400,
-        size: 40,
-        duration: 2,
-        opacity: 8,
-        speed: 3,
-      },
-      repulse: {
-        distance: 200,
-        duration: 0.4,
-      },
-      push: {
-        particles_nb: 4,
-      },
-      remove: {
-        particles_nb: 2,
-      },
-    },
-  },
-  retina_detect: true,
-};
 const Dialog = ({ showDialog, setShowDialog }) => (
   <Modal
     show={showDialog}
@@ -136,9 +31,9 @@ const Dialog = ({ showDialog, setShowDialog }) => (
     size='lg'
     style={{ background: "transparent" }}
   >
-    <Modal.Body style={{}}>
-      <motion.h3 whileHover={{ scale: 1.03 }}>
-        <Link href='/' style={{ textDecoration: "none" }}>
+    <Modal.Body style={{background: "#737373",color:"white"}}>
+      <motion.h3 whileHover={{ scale: 1.03 }} style={{ textColor:"white"}}>
+        <Link href='/' style={{ textDecoration: "none"}}>
           Home
         </Link>
       </motion.h3>
@@ -149,9 +44,9 @@ const Dialog = ({ showDialog, setShowDialog }) => (
         <Link href='/static/PDF/Abdelkader-rafaat.pdf'>CV</Link>
       </motion.h3>
       <motion.h3 whileHover={{ scale: 1.03 }}>
-        <Link href='/fun'>Side Projects</Link>
+        <Link href='/fun' as={"text"} >Side Projects</Link>
       </motion.h3>
-      <motion.h3 whileHover={{ scale: 1.03 }}>
+      <motion.h3 whileHover={{ scale: 1.03 }} >
         <Link href='/projects'>Deployed Projects</Link>
       </motion.h3>
     </Modal.Body>
@@ -162,7 +57,8 @@ const NavBar = ({ setShowDialog }) => (
     <ThemeProvider>
       <Navbar bg='dark' variant='dark'>
         <Navbar.Brand>
-          <SVGIMG />
+        <SVGIMG />
+          
         </Navbar.Brand>
         <Nav className='mr-auto'></Nav>
         <Form inline>
@@ -263,7 +159,7 @@ const Layout = ({ children, smallWindow = false }) => {
       <Container>
         { !smallWindow &&
             <Particles
-          params={set}
+          params={particalConfig}
           className='particles'
           style={{
             background: "#000000",
@@ -309,6 +205,10 @@ const Layout = ({ children, smallWindow = false }) => {
             background-color: black;
             background: inherit;
           }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
         `}
       </style>
     </div>

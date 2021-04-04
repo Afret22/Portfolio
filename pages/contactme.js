@@ -113,11 +113,12 @@ const ContactMe = () => {
               </Form.Group>
               <Form.Group class="form-group">
                 <Button
+                  variant="dark"
                   type="submit"
                   value="Send Message"
                   class="btn btn-primary py-3 px-5"
                 >
-                  Send
+                 <h5> <strong>Send</strong></h5>
                 </Button>
               </Form.Group>
             </Form>
